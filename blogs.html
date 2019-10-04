@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Nadian</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="assets/css/style.css" rel="stylesheet">
+    <link rel="shortcut icon" href="assets/images/cd.ico" type="image/x-icon" />
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+    <!-- Bootstrap core CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Material Design Bootstrap -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.10/css/mdb.min.css" rel="stylesheet">
+    <!-- jquery CDN -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <style>
+        .form-control:focus {
+            box-shadow: none;
+        }
+        
+        .form-control-underlined {
+            border-width: 0px;
+            border-bottom-width: 1px;
+            border-radius: 0;
+            padding-left: 0px;
+        }
+        
+        .form-control::placeholder {
+            font-size: 0.95rem;
+            color: #aaa;
+            font-style: italic;
+        }
+        
+        * {
+            box-sizing: border-box;
+        }
+        
+        .s006 form .inner-form {
+            width: 100%;
+            margin-bottom: 17px;
+        }
+        
+        .s006 form .inner-form .input-field {
+            height: 70px;
+            width: 100%;
+            position: relative;
+        }
+        
+        .s006 form .inner-form .input-field input {
+            height: 100%;
+            width: 100%;
+            background: transparent;
+            border: 0;
+            background: #fff;
+            display: block;
+            width: 100%;
+            padding: 10px 32px 10px 70px;
+            font-size: 18px;
+            color: #666;
+            border-radius: 34px;
+        }
+        
+        .s006 form .inner-form .input-field input.placeholder {
+            color: #ccc;
+            font-size: 18px;
+        }
+        
+        .s006 form .inner-form .input-field input:-moz-placeholder {
+            color: #ccc;
+            font-size: 18px;
+        }
+        
+        .s006 form .inner-form .input-field input::-webkit-input-placeholder {
+            color: #ccc;
+            font-size: 18px;
+        }
+        
+        .s006 form .inner-form .input-field input:hover,
+        .s006 form .inner-form .input-field input:focus {
+            box-shadow: none;
+            outline: 0;
+        }
+        
+        .s006 form .inner-form .input-field .btn-search {
+            width: 70px;
+            display: -ms-flexbox;
+            display: flex;
+            -ms-flex-align: center;
+            align-items: center;
+            position: absolute;
+            left: 0;
+            height: 100%;
+            background: transparent;
+            border: 0;
+            padding: 0;
+            cursor: pointer;
+            display: flex;
+            -ms-flex-pack: center;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .s006 form .inner-form .input-field .btn-search svg {
+            fill: #ccc;
+            width: 30px;
+            height: 30px;
+            transition: all .2s ease-out, color .2s ease-out;
+        }
+        
+        .s006 form .inner-form .input-field .btn-search:hover,
+        .s006 form .inner-form .input-field .btn-search:focus {
+            outline: 0;
+            box-shadow: none;
+        }
+        
+        .s006 form .inner-form .input-field .btn-search:hover svg,
+        .s006 form .inner-form .input-field .btn-search:focus svg {
+            fill: #666;
+        }
+        
+        .s006 form .suggestion-wrap {
+            padding: 0 15px;
+        }
+        
+        .s006 form .suggestion-wrap span {
+            font-size: 14px;
+            font-family: 'Helvetica', sans-serif;
+            display: inline-block;
+            background: rgba(0, 0, 0, 0.6);
+            padding: 0 15px;
+            line-height: 32px;
+            color: #fff;
+            border-radius: 16px;
+            margin-right: 10px;
+            margin-bottom: 10px;
+        }
+        
+        @media screen and (max-width: 767px) {
+            .s006 form .inner-form .input-field {
+                margin-bottom: 20px;
+                height: 50px;
+            }
+            .s006 form .inner-form .input-field input {
+                padding-left: 55px;
+                font-size: 16px;
+            }
+            .s006 form .inner-form .input-field .btn-search svg {
+                width: 26px;
+                height: 26px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- navbar -->
+    <nav class="navbar sticky-top navbar-expand-lg navbar-light bg-white">
+        <div class="container">
+            <a class="navbar-brand" href="index.html"><b>NADIAN</b></a>
+
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+           <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item ">
+                        <a class="nav-link" href="index.html">Home </a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">Blogs<span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact_us.html">Contact Us</a>
+                    </li>
+                    <!-- <li class="nav-item">
+                    <a class="nav-link disabled" href="#">Disabled</a>
+                </li> -->
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+    <!-- Search -->
+    <div class="jumbotron jumbotron-fluid" style="background-color:#25a186">
+        <div class="container">
+
+            <!-- SearchBar -->
+            <div class="s006">
+                <form>
+                    <fieldset>
+                        <div class="inner-form">
+                            <div class="input-field ">
+                                <button class="btn-search" type="button">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                    <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"></path>
+                    </svg>
+                    </button>
+                                <input id="myInput" onkeyup="searchFunction()" type="search" placeholder="What're you searching for?" />
+                            </div>
+                        </div>
+
+                    </fieldset>
+                </form>
+            </div>
+
+        </div>
+    </div>
+    </div>
+
+
+
+
+
+    <!-- posts -->
+
+    <div class="container">
+        <div class="row">
+
+            <!-- First row of cards -->
+            <div class="col-sm">
+                <div class="card posts">
+                    <a href="blog/python_the_rising_programming_language.html">
+                        <img class="card-img-top" src="https://3.bp.blogspot.com/-IHim0Sl_AA4/XHRHm-p46BI/AAAAAAAAABo/n7xrIjoiMdEuBMzwowXzRwVMBa3WDZGfQCLcBGAs/s400/nadian.jpg" alt="Card image cap">
+
+                        <div class="card-body">
+                            <h5 class="card-title">PYTHON, THE RISING PROGRAMING LANGUAGE</h5>
+                            <p class="card-text">Python is an interpreted, high-level, general-purpose programming language. Guido van Rossum
+                            </p>
+                        </div>
+                    </a>
+                </div>
+                <div class="card posts">
+                    <a href="blog/adding_video_to_webpage.html">
+                        <img class="card-img-top" src="https://images.pexels.com/photos/326424/pexels-photo-326424.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260" alt="Card image cap">
+
+                        <div class="card-body">
+                            <h5 class="card-title">Adding video To Webpage</h5>
+                            <p class="card-text">Html is known as base of any website display, Html is further beautified , so that it looks very much attractive,
+                            </p>
+                        </div>
+                    </a>
+                </div>
+                <div class="card posts">
+                    <a href="blog/how_to_learn_data_structure.html">
+                        <img class="card-img-top" src="https://4.bp.blogspot.com/-E9cP8Y31woo/XHVwPE9zxGI/AAAAAAAAD6o/fsbVabPyH4U1-KObELmCAgDlf4Vqm9UGQCLcBGAs/s320/PSX_20190226_114203.jpg" alt="Card image cap">
+
+                        <div class="card-body">
+                            <h5 class="card-title">How to learn Data Structure?</h5>
+                            <p class="card-text">Who want to become programmer in future. Once we learn any programming language, usually we all learn C
+                            </p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Second row of cards -->
+            <div class="col-sm ">
+
+                <div class="card posts">
+                    <a href="blog/my_first_c_program.html">
+                        <img class="card-img-top" src="https://cdn.pixabay.com/photo/2014/12/30/05/42/source-code-583537__340.jpg" alt="Card image cap">
+
+                        <div class="card-body">
+                            <h5 class="card-title">My First C program</h5>
+                            <p class="card-text">Whenever a person starts learning computer science than the first language which is recommended to him to learn is C
+                            </p>
+                        </div>
+                    </a>
+                </div>
+                <div class="card posts">
+                    <a href="blog/how_to_learn_programming.html">
+                        <img class="card-img-top" src="https://3.bp.blogspot.com/-MBrEhXat8XI/XHRQ-44S76I/AAAAAAAAACA/PnZQ7GNU21Q0rp_HBtBs7qLaejBJsIYhQCLcBGAs/s400/nadian.jpg">
+
+                        <div class="card-body">
+                            <h5 class="card-title">HOW TO LEARN PROGRAMMING ?</h5>
+                            <p class="card-text">One of the biggest question whenever someone thinks about creating some programme or Software the biggest question arises how to learn
+                            </p>
+                        </div>
+                    </a>
+                </div>
+                <div class="card posts">
+                    <a href="blog/program_to_find_ascii_value_of_any_character.html">
+                        <img class="card-img-top" src="https://1.bp.blogspot.com/-USGv-ki368U/XSZ-JM9_9_I/AAAAAAAAFZo/MO2KSKgjhvEA4HyiMAacRF3mPF65rfAGACLcBGAs/s640/Annotation%2B2019-07-11%2B053814.jpg" alt="Card image cap">
+
+                        <div class="card-body">
+                            <h5 class="card-title">Program to find ASCII value of any character/number in C & C++</h5>
+                            <p class="card-text">#include
+                                <stdio.h>int main(){char c;printf("Enter a character: ");scanf("%c", &c);printf("ASCII value of %c = %d", c, c);}</p>
+                            </p>
+                        </div>
+                    </a>
+                </div>
+
+
+
+
+            </div>
+
+            <!-- Third row of cards -->
+            <div class="col-sm">
+                <div class="card posts">
+                    <a href="blog/what_is_machine_learning_a_glance.html">
+                        <img class="card-img-top" src="https://images.pexels.com/photos/185725/pexels-photo-185725.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="Card image cap">
+
+                        <div class="card-body">
+                            <h5 class="card-title">What is Machine learning ? A glance ...</h5>
+                            <p class="card-text">Machine learning is a use of artificial intelligence (AI) that gives frameworks the capacity to consequently take in
+                            </p>
+                        </div>
+                    </a>
+                </div>
+                <div class="card posts">
+                    <a href="blog/what_is_css_.html">
+                        <img class="card-img-top" src="https://image.shutterstock.com/image-vector/opening-shirt-css-3-vector-450w-733272544.jpg" alt="Card image cap">
+
+                        <div class="card-body">
+                            <h5 class="card-title">What is CSS??</h5>
+                            <p class="card-text">CSS is a language used to beautify a HTML webpage So that it can look attractive and more appealing to user.
+                            </p>
+                        </div>
+                    </a>
+                </div>
+                <div class="card posts">
+                    <a href="blog/what_artitfical_intelligence_and_machine_learning_.html">
+                        <img class="card-img-top" src="https://images.pexels.com/photos/39349/teens-robot-future-science-39349.jpeg?auto=compress&cs=tinysrgb&h=650&w=940" alt="Card image cap">
+
+                        <div class="card-body">
+                            <h5 class="card-title">What is Artificial Intelligence & Machine Learning</h5>
+                            <p class="card-text">Artificial Intelligence (AI) is a field of study of computer science that makes machines seem like as if they have human intelligence.
+                            </p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+        </div><br>
+
+        <!-- <div style="display:none;" id="error" class="alert alert-danger">
+            <strong>Error!</strong> Not Found.
+        </div> -->
+    </div><br>
+
+
+
+
+
+
+    <!-- javascript -->
+    <script src="assets/js/main.js"></script>
+
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <!-- Bootstrap tooltips -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
+    <!-- Bootstrap core JavaScript -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <!-- MDB core JavaScript -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.10/js/mdb.min.js"></script>
+
+</body>
+
+</html>
